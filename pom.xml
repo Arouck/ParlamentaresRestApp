@@ -53,7 +53,7 @@
                 <version>2.2</version>
                 <configuration>
                     <port>9090</port>
-                    <path>/notas</path>
+                    <path>/app</path>
                 </configuration>
             </plugin>
             <plugin>
