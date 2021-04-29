@@ -1,4 +1,4 @@
-package br.com.devmedia.notas.rest;
+package br.com.parlamentares.parlamentaresrestapp.rest;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;

@@ -1,4 +1,4 @@
-package br.com.devmedia.notas.model;
+package br.com.parlamentares.parlamentaresrestapp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

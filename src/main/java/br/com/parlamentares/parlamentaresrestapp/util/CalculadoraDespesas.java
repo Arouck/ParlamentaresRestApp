@@ -1,6 +1,6 @@
-package br.com.devmedia.notas.util;
+package br.com.parlamentares.parlamentaresrestapp.util;
 
-import br.com.devmedia.notas.model.Despesa;
+import br.com.parlamentares.parlamentaresrestapp.model.Despesa;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
