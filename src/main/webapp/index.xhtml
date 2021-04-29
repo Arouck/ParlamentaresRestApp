@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>DevMedia - Notas</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:dataTable var="deputado" value="#{parlamentaresBean.deputados}"
+                     paginator="true" rows="5" paginatorPosition="bottom">
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Nome"/>
+                </f:facet>
+                <h:outputText value="#{deputado.nome}"/>
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Partido"/>
+                </f:facet>
+                <h:outputText value="#{deputado.siglaPartido}" />
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="UF"/>
+                </f:facet>
+                <h:outputText value="#{deputado.siglaUf}"/>
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Visualizações"/>
+                </f:facet>
+                <h:outputText value="#{deputado.numeroDeVisualizacoes}"/>
+            </p:column>
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Exibir detalhes"/>
+                </f:facet>
+                <p:commandButton action="#{parlamentaresBean.redirecionarParaDetalhes(parlamentaresBean.deputados.indexOf(deputado))}" value="Detalhes" >
+                </p:commandButton>
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</h:body>
+</html>
