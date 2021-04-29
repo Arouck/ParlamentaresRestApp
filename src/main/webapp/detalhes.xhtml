@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Detalhes</title>
+</h:head>
+
+<h:body>
+    <p:panelGrid columns="2">
+        <f:facet name="header">
+            <p:graphicImage value="#{detalhesBean.deputado.ultimoStatus.urlFoto}" width="150" height="200"/>
+        </f:facet>
+
+        <p:outputLabel value="Nome:" />
+        <p:outputLabel value="#{detalhesBean.deputado.nomeCivil}" />
+
+        <p:outputLabel value="Data de nascimento:" />
+        <p:outputLabel value="#{detalhesBean.deputado.dataNascimento}" />
+
+        <p:outputLabel value="Partido:" />
+        <p:outputLabel value="#{detalhesBean.deputado.ultimoStatus.siglaPartido}" />
+
+        <p:outputLabel value="Sexo:" />
+        <p:outputLabel value="#{detalhesBean.deputado.sexo}" />
+    </p:panelGrid>
+
+    <h:form>
+        <p:dataTable var="despesaTotalNoMes" value="#{detalhesBean.deputado.despesas}"
+                     style="text-align: center" >
+
+            <f:facet name="header">
+                <p:outputLabel value="Lista de Despesas nos dois últimos meses" style="text-align: center" />
+            </f:facet>
+
+            <p:column style="text-align: center">
+                <f:facet name="header">
+                    <h:outputText value="Mes"/>
+                </f:facet>
+                <h:outputText value="#{despesaTotalNoMes.mes}"/>
+            </p:column>
+            <p:column style="text-align: center">
+                <f:facet name="header">
+                    <h:outputText value="Valor Total"/>
+                </f:facet>
+                <h:outputText value="#{despesaTotalNoMes.valorLiquido}" >
+                    <f:convertNumber pattern="R$ #0.00" />
+                </h:outputText>
+            </p:column>
+            <p:column style="text-align: center">
+                <p:commandButton value="Detalhar Despesas" oncomplete="PF('detalhes').show();" update="detalhes"
+                                 action="#{detalhesBean.detalharDespesasNoMes(detalhesBean.deputado.despesas.indexOf(despesaTotalNoMes))}" />
+            </p:column>
+
+            <f:facet name="footer" >
+                <p:linkButton outcome="index" value="Voltar" />
+            </f:facet>
+        </p:dataTable>
+    </h:form>
+
+    <p:dialog header="Detalhes das despesas" widgetVar="detalhes"
+              draggable="false" resizable="false" modal="true"
+              id="detalhes">
+        <p:dataTable var="despesa" value="#{detalhesBean.despesasNoMes}"
+                     scrollable="true" scrollHeight="250">
+
+            <p:column style="text-align: center">
+                <f:facet name="header">
+                    <h:outputText value="Tipo de despesa"/>
+                </f:facet>
+                <h:outputText value="#{despesa.tipoDespesa}"/>
+            </p:column>
+
+            <p:column style="text-align: center">
+                <f:facet name="header">
+                    <h:outputText value="Tipo de documento"/>
+                </f:facet>
+                <h:outputText value="#{despesa.tipoDocumento}" />
+            </p:column>
+
+            <p:column style="text-align: center">
+                <f:facet name="header">
+                    <h:outputText value="Data da despesa"/>
+                </f:facet>
+                <h:outputText value="#{despesa.dataDocumento}" />
+            </p:column>
+
+            <p:column style="text-align: center">
+                <f:facet name="header">
+                    <h:outputText value="Valor Líquido"/>
+                </f:facet>
+                <h:outputText value="#{despesa.valorLiquido}" >
+                    <f:convertNumber pattern="R$ #0.00" />
+                </h:outputText>
+            </p:column>
+        </p:dataTable>
+    </p:dialog>
+
+</h:body>
+</html>
