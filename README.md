@@ -38,9 +38,9 @@ Esta é uma aplicação web, escrita em Java, que consome a API RESTful da Câma
 
 1. Baixar o repositório;
 
-2. Entrat na pasta ```target/bin```;
+2. Entrar na pasta raiz do repositório local ```~/ParlamentaresRestApp```;
 
-3. Executar ```webapp.bat``` no Windows, ou ```sh webapp``` no Linux ou MacOS.
+3. Executar ```target\bin\webapp.bat``` no Windows, ou ```sh target/bin/webapp``` no Linux ou MacOS.
 
 4. Entrar no endereço ```localhost:9090```.
 
