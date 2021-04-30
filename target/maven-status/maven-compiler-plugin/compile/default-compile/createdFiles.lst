@@ -1,0 +1,14 @@
+br\com\parlamentares\parlamentaresrestapp\model\Deputado.class
+br\com\parlamentares\parlamentaresrestapp\model\UltimoStatus.class
+br\com\parlamentares\parlamentaresrestapp\rest\RespostaListaDespesas.class
+br\com\parlamentares\parlamentaresrestapp\util\FormatadorData.class
+br\com\parlamentares\parlamentaresrestapp\model\Despesa.class
+br\com\parlamentares\parlamentaresrestapp\rest\RestApi.class
+br\com\parlamentares\parlamentaresrestapp\rest\RespostaAbstract.class
+br\com\parlamentares\parlamentaresrestapp\util\CalculadoraDespesas.class
+br\com\parlamentares\parlamentaresrestapp\main\Main.class
+br\com\parlamentares\parlamentaresrestapp\rest\RespostaListaDeputados.class
+br\com\parlamentares\parlamentaresrestapp\util\SeparadorMes.class
+br\com\parlamentares\parlamentaresrestapp\rest\RespostaDetalhes.class
+br\com\parlamentares\parlamentaresrestapp\managedbean\DetalhesBean.class
+br\com\parlamentares\parlamentaresrestapp\managedbean\ParlamentaresBean.class
