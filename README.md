@@ -33,6 +33,18 @@ Esta é uma aplicação web, escrita em Java, que consome a API RESTful da Câma
     * Data da despesa;
     
     * Valor líquido.
+    
+## Como executar
+
+1. Baixar o repositório;
+
+2. Entrat na pasta ```target/bin```;
+
+3. Executar ```webapp.bat``` no Windows, ou ```sh webapp``` no Linux ou MacOS.
+
+4. Entrar no endereço ```localhost:9090```.
+
+> Obs: caso você queira mudar a porta de execução, basta alterar o atributo ```webPort``` no arquivo Main.java e então executar o comando ```mvn clean package``` na pasta raiz do projeto.
 
 ## Tecnologias
 
